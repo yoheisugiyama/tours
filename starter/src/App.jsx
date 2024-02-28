@@ -37,10 +37,20 @@ const App = () => {
     </main>
   }
 
-  return <main>
+  if(tours.length === 0){
+    return <main>
+      <h2>no tours left</h2>
+      <button type='button' style={{marginTop: '2rem'}} className="btn" onClick={fetchTours}> refetch </button>
+    </main>
+  }
+
+
+  return ( <main>
 
     <Tours tours={tours} removeTour={removeTour} />
   
-  </main>;
+  </main>);
+
 };
+
 export default App;
